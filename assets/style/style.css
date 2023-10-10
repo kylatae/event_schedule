@@ -1,6 +1,11 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Golos Text', sans-serif;
   font-size: 16px;
+}
+
+header {
+  font-family: 'Texturina', serif;
+  font-size: 25px;
 }
 
 textarea {
