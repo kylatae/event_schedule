@@ -8,8 +8,8 @@ const timeStart = 9;
 var now = dayjs();
 var currentTime = now.hour();
 
-    //Since I removed the div sections for the hour blocks they are rebuilt here custom to the time range given and colored by the time of day.
-    //This is set up to run once. It builds an hourBlockTotal amount of hour blocks on the page and starts at whatever time timeStart is set to.
+//Since I removed the div sections for the hour blocks they are rebuilt here custom to the time range given and colored by the time of day.
+//This is set up to run once. It builds an hourBlockTotal amount of hour blocks on the page and starts at whatever time timeStart is set to.
 function buildPage(){
   for(i = 0; i < hourBlockTotal; i++){
     var timeID = i+timeStart
@@ -38,13 +38,12 @@ function buildPage(){
       </div>
       `
       $(scheduleLocation).append(row);
-    }
 
+    }
   }
 }
 
-$(clickSave).click(function(event){
-  // var blockSave = $(this).prev('textarea').val();
+$(scheduleLocation).on("click", clickSave, function(event){
   var blockSaveText = $(this).siblings('textarea').val();
   var blockSaveID = $(this).siblings('.hour').text();
   localStorage.setItem(blockSaveID, JSON.stringify(blockSaveText));
